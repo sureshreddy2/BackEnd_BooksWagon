@@ -25,7 +25,7 @@ namespace BooksWagonApplication
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://65.0.89.117:80")
+                        builder.WithOrigins("http://3.110.119.124:80")
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                     });
