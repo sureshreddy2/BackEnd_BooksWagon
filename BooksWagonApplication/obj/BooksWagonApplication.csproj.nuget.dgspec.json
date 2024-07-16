@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\API BookShopApplication\\BooksWagonApplication\\BooksWagonApplication\\BooksWagonApplication.csproj": {}
+    "/home/ubuntu/BackEnd_BooksWagon/BooksWagonApplication/BooksWagonApplication.csproj": {}
   },
   "projects": {
-    "D:\\API BookShopApplication\\BooksWagonApplication\\BooksWagonApplication\\BooksWagonApplication.csproj": {
+    "/home/ubuntu/BackEnd_BooksWagon/BooksWagonApplication/BooksWagonApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\API BookShopApplication\\BooksWagonApplication\\BooksWagonApplication\\BooksWagonApplication.csproj",
+        "projectUniqueName": "/home/ubuntu/BackEnd_BooksWagon/BooksWagonApplication/BooksWagonApplication.csproj",
         "projectName": "BooksWagonApplication",
-        "projectPath": "D:\\API BookShopApplication\\BooksWagonApplication\\BooksWagonApplication\\BooksWagonApplication.csproj",
-        "packagesPath": "C:\\Users\\Ramya\\.nuget\\packages\\",
-        "outputPath": "D:\\API BookShopApplication\\BooksWagonApplication\\BooksWagonApplication\\obj\\",
+        "projectPath": "/home/ubuntu/BackEnd_BooksWagon/BooksWagonApplication/BooksWagonApplication.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/home/ubuntu/BackEnd_BooksWagon/BooksWagonApplication/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ramya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,10 +42,6 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.13, )"
-            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -57,6 +51,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.11, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.7, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -82,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/246/sdk/6.0.424/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,5 +1,6 @@
-using BooksWagonApplication.Models;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using System.Net;
 
 namespace BooksWagonApplication
 {
@@ -7,50 +8,22 @@ namespace BooksWagonApplication
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            //Database Connection
-             builder.Services.AddDbContext<BookShopContext>(opt=>opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
-            builder.Services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.WithOrigins("http://3.110.119.124:80")
-                                            .AllowAnyHeader()
-                                            .AllowAnyMethod();
-                    });
-            });
-            builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
-                        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-                app.UseCors();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
-
-            app.Run();
+            CreateHostBuilder(args).Build().Run();
         }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                    webBuilder.ConfigureKestrel(options =>
+                    {
+                        options.Listen(IPAddress.Any, 5000); // HTTP port
+                        options.Listen(IPAddress.Any, 5001, listenOptions =>
+                        {
+                            listenOptions.UseHttps(); // HTTPS port
+                        });
+                    });
+                });
     }
 }
